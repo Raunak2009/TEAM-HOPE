@@ -3,7 +3,7 @@ from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
 import joblib
-from sklearn.model_selection import GridSearchCV, cross_val_score
+from sklearn.model_selection import GridSearchCV, cross_val_score, KFold
 
 from build_labels import load_real_data, build_onset_labels  # reuses your tuned detector
 import os
@@ -98,10 +98,10 @@ def train_regional_models():
 
     for name, data in [("coastal", coastal), ("interior", interior)]:
         X, y = data[FEATURE_COLS], data["onset_day_of_year"]
-        grid = GridSearchCV(GradientBoostingRegressor(random_state=42), param_grid, cv=5, scoring="neg_mean_absolute_error")
+        grid = GridSearchCV(GradientBoostingRegressor(random_state=42), param_grid, cv=KFold(n_splits=5, shuffle=True, random_state=42), scoring="neg_mean_absolute_error")
         grid.fit(X, y)
         model = grid.best_estimator_
-        cv_scores = cross_val_score(model, X, y, cv=5, scoring="neg_mean_absolute_error")
+        cv_scores = cross_val_score(model, X, y, cv=KFold(n_splits=5, shuffle=True, random_state=42), scoring="neg_mean_absolute_error")
         mae = -cv_scores.mean()
         print(f"{name} MAE: {mae:.2f} | best params: {grid.best_params_}")
 
