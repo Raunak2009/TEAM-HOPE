@@ -12,15 +12,15 @@ export default function ProfilePage() {
     <>
       <PageHeader title="Officer Profile" action={<button className="vm-icon-button" type="button" onClick={() => setEditing((value) => !value)}><Pencil size={17} /></button>} />
       <section className="vm-card vm-profile-card">
-        <div className="vm-profile-avatar">RF</div>
-        <div><h2>Ramesh Gowda</h2><p>...Agriculture Extension Officer, {block ? `${block.District} Block` : 'Loading jurisdiction...'}</p></div>
+        <div className="vm-profile-avatar">RG</div>
+        <div><h2>Ramesh Gowda</h2><p>Agriculture Extension Officer, {block ? `${block.District} Block` : 'Loading jurisdiction...'}</p></div>
         <span className="vm-chip vm-profile-edit">{editing ? 'Editing' : 'Officer'}</span>
       </section>
       <section className="vm-section" style={{ marginTop: 25 }}>
         <div className="vm-section-heading"><h2 className="vm-section-title">My farm details</h2>{editing ? <span className="vm-eyebrow">Tap save below</span> : null}</div>
         <div className="vm-card" style={{ padding: '4px 16px' }}>
           <div className="vm-farm-grid">
-            <FarmDetail icon={<Sprout size={16} />} label="Designation" value="Extension Officer" />
+            <FarmDetail icon={<Sprout size={16} />} label="Designation" value="Extension Officer, Department of Agriculture, Govt. of India" />
             <FarmDetail icon={<FileText size={16} />} label="Stations monitored" value="12 stations" />
             <FarmDetail icon={<FileText size={16} />} label="Primary crop focus" value="Paddy, Ragi, Maize" />
             <FarmDetail icon={<Droplets size={16} />} label="Years of service" value="6 years" />
@@ -30,8 +30,8 @@ export default function ProfilePage() {
       <section className="vm-section">
         <div className="vm-section-heading"><h2 className="vm-section-title">Support & services</h2></div>
         <div className="vm-card vm-support-list">
-          <button className="vm-support-button" type="button" onClick={() => window.alert('Noted.')}><span className="vm-support-icon"><ShieldCheck size={17} /></span><span><strong>Agricultural expert support</strong><span>Connect with an agronomist</span></span><ChevronRight size={17} /></button>
-          <button className="vm-support-button" type="button" onClick={() => window.alert('Showing schemes.')}><span className="vm-support-icon"><FileText size={17} /></span><span><strong>Government subsidy info</strong><span>Kisan schemes & support</span></span><ChevronRight size={17} /></button>
+          <button className="vm-support-button" type="button" onClick={() => window.alert('Field report submitted for review.')}><span className="vm-support-icon"><ShieldCheck size={17} /></span><span><strong>Submit field report</strong><span>Log observations for this block</span></span><ChevronRight size={17} /></button>
+          <button className="vm-support-button" type="button" onClick={() => window.alert('Opening officer resources.')}><span className="vm-support-icon"><FileText size={17} /></span><span><strong>Officer resources & SOPs</strong><span>Training material & department guidelines</span></span><ChevronRight size={17} /></button>
         </div>
       </section>
       <section className="vm-section" style={{ marginTop: 26 }}>
