@@ -1,7 +1,8 @@
-import { ArrowRight, ChevronRight, Droplets, FileText, MapPin, Pencil, ShieldCheck, Sprout } from 'lucide-react';
+import { ArrowRight, Briefcase, CalendarDays, ChevronRight, Droplets, FileText, MapPin, Pencil, ShieldCheck, Sprout } from 'lucide-react';
 import { useState } from 'react';
 import { PageHeader } from '@/components/page-header';
 import { useCurrentBlock } from '@/hooks/use-current-block';
+
 
 export default function ProfilePage() {
   const [editing, setEditing] = useState(false);
@@ -20,10 +21,10 @@ export default function ProfilePage() {
         <div className="vm-section-heading"><h2 className="vm-section-title">My Details</h2>{editing ? <span className="vm-eyebrow">Tap save below</span> : null}</div>
         <div className="vm-card" style={{ padding: '4px 16px' }}>
           <div className="vm-farm-grid">
-            <FarmDetail icon={<Sprout size={16} />} label="Designation" value="Extension Officer, Department of Agriculture, Govt. of India" />
-            <FarmDetail icon={<FileText size={16} />} label="Stations monitored" value="12 stations" />
-            <FarmDetail icon={<FileText size={16} />} label="Primary crop focus" value="Paddy, Ragi, Maize" />
-            <FarmDetail icon={<Droplets size={16} />} label="Years of service" value="6 years" />
+            <FarmDetail icon={<Briefcase size={16} />} label="Designation" value="Extension Officer, Department of Agriculture, Govt. of India" />
+            <FarmDetail icon={<MapPin size={16} />} label="Stations monitored" value="12 stations" />
+            <FarmDetail icon={<Sprout size={16} />} label="Primary crop focus" value="Paddy, Ragi, Maize" />
+            <FarmDetail icon={<CalendarDays size={16} />} label="Years of service" value="6 years" />
           </div>
         </div>
       </section>
