@@ -10,20 +10,20 @@ export default function ProfilePage() {
 
   return (
     <>
-      <PageHeader title="Farmer profile" action={<button className="vm-icon-button" type="button" onClick={() => setEditing((value) => !value)}><Pencil size={17} /></button>} />
+      <PageHeader title="Officer Profile" action={<button className="vm-icon-button" type="button" onClick={() => setEditing((value) => !value)}><Pencil size={17} /></button>} />
       <section className="vm-card vm-profile-card">
         <div className="vm-profile-avatar">RF</div>
-        <div><h2>Raunak Farmer</h2><p><MapPin size={12} style={{ verticalAlign: 'middle', marginRight: 3 }} /> {block ? `${block.District}, Karnataka` : 'Loading location...'}</p></div>
-        <span className="vm-chip vm-profile-edit">{editing ? 'Editing' : 'Farmer'}</span>
+        <div><h2>Ramesh Gowda</h2><p>...Agriculture Extension Officer, {block ? `${block.District} Block` : 'Loading jurisdiction...'}</p></div>
+        <span className="vm-chip vm-profile-edit">{editing ? 'Editing' : 'Officer'}</span>
       </section>
       <section className="vm-section" style={{ marginTop: 25 }}>
         <div className="vm-section-heading"><h2 className="vm-section-title">My farm details</h2>{editing ? <span className="vm-eyebrow">Tap save below</span> : null}</div>
         <div className="vm-card" style={{ padding: '4px 16px' }}>
           <div className="vm-farm-grid">
-            <FarmDetail icon={<Sprout size={16} />} label="Primary crop" value="Rice (Paddy)" />
-            <FarmDetail icon={<FileText size={16} />} label="Total land" value="3.5 Acres" />
-            <FarmDetail icon={<FileText size={16} />} label="Soil type" value="Clay Loam" />
-            <FarmDetail icon={<Droplets size={16} />} label="Irrigation" value="Rainfed & Borewell" />
+            <FarmDetail icon={<Sprout size={16} />} label="Designation" value="Extension Officer" />
+            <FarmDetail icon={<FileText size={16} />} label="Stations monitored" value="12 stations" />
+            <FarmDetail icon={<FileText size={16} />} label="Primary crop focus" value="Paddy, Ragi, Maize" />
+            <FarmDetail icon={<Droplets size={16} />} label="Years of service" value="6 years" />
           </div>
         </div>
       </section>
