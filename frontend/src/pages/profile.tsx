@@ -17,7 +17,7 @@ export default function ProfilePage() {
         <span className="vm-chip vm-profile-edit">{editing ? 'Editing' : 'Officer'}</span>
       </section>
       <section className="vm-section" style={{ marginTop: 25 }}>
-        <div className="vm-section-heading"><h2 className="vm-section-title">My farm details</h2>{editing ? <span className="vm-eyebrow">Tap save below</span> : null}</div>
+        <div className="vm-section-heading"><h2 className="vm-section-title">My Details</h2>{editing ? <span className="vm-eyebrow">Tap save below</span> : null}</div>
         <div className="vm-card" style={{ padding: '4px 16px' }}>
           <div className="vm-farm-grid">
             <FarmDetail icon={<Sprout size={16} />} label="Designation" value="Extension Officer, Department of Agriculture, Govt. of India" />
